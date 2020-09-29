@@ -3,10 +3,10 @@
 # Routes to build
 
 | HTTP Verbs  |  Routes         | Actions  |
-| GET         | /posts          | index    |
-| GET         | /posts/:id      | show     |
-| GET         | /posts/new      | new      |
-| GET         | /posts/:id/edit | edit     |
-| POST        | /posts          | create   |
+| GET         | /posts          | index    | - DONE
+| GET         | /posts/:id      | show     | - DONE
+| GET         | /posts/new      | new      | - DONE
+| GET         | /posts/:id/edit | edit     | - DONE
+| POST        | /posts          | create   | - DONE
 | DELETE      | /posts/:id      | delete   |
 | PUT/PATCH   | /posts/:id      | update   | 
