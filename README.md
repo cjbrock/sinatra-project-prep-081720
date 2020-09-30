@@ -8,5 +8,5 @@
 | GET         | /posts/new      | new      | - DONE
 | GET         | /posts/:id/edit | edit     | - DONE
 | POST        | /posts          | create   | - DONE
-| DELETE      | /posts/:id      | delete   |
+| DELETE      | /posts/:id      | destroy  |
 | PUT/PATCH   | /posts/:id      | update   | 

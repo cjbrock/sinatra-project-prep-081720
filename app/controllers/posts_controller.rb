@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
     get '/posts' do 
-        @posts = Post.all
-        erb :"posts/index"
+        if logged_in?
+            @posts = Post.all
+            erb :"posts/index"
+        else
+            redirect "/login"
+        end
     end
 
     get '/posts/new' do
@@ -26,11 +30,14 @@ class PostsController < ApplicationController
     get '/posts/:id/edit' do
         @users = User.all
         @post = Post.find_by_id(params[:id])
-        erb :"posts/edit"
+        if @post.user.id == current_user.id
+            erb :"posts/edit"
+        else
+            redirect "/posts"
+        end
     end
 
     patch '/posts/:id' do
-        binding.pry
         @post = Post.find_by_id(params[:id])
         params.delete("_method")
         if @post.update(params)
@@ -40,6 +47,11 @@ class PostsController < ApplicationController
         end
     end
 
+    delete '/posts/:id' do
+        @post = Post.find_by_id(params[:id])
+        @post.destroy
+        redirect "/posts"
+    end
 
 
 end
