@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
     belongs_to :user
 
-    # validates :title, presence: true
+    validates :title, :body, presence: true
+
 end
