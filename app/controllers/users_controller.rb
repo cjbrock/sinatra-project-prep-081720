@@ -16,7 +16,6 @@ class UsersController < ApplicationController
             # redirect the user
         else
         # if it doesn't save
-        binding.pry
             erb :"users/signup"
             #redirect back to signup
         end
